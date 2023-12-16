@@ -3,9 +3,6 @@ Some sites use scripts to detect Selenium, and then block you.
 To evade detection, add --uc as a pytest command-line option."""
 from seleniumbase import BaseCase
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 from email.message import EmailMessage
 import time
@@ -19,6 +16,9 @@ class UndetectedTest(BaseCase):
     def test_browser_is_undetected(self):
         if not (self.undetectable):
             self.get_new_driver(undetectable=True, headless=True)
+        self.driver.execute_cdp_cmd("Network.setUserAgentOverride", {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+})
         self.driver.get("https://enroll.dlsu.edu.ph/dlsu/view_course_offerings/#relax")
         
         print(self.driver.page_source)
@@ -26,7 +26,7 @@ class UndetectedTest(BaseCase):
         idnum.send_keys("12108084")
         idnum.send_keys(Keys.RETURN)
         
-        courses = ["STSWENG", "3DMODEL", "CSARCH2", "LBYARCH", "STADVDB", "GAMEDES", "GEARTAP", "GEWORLD"]
+        courses = ["STSWENG", "3DMODEL", "CSARCH2", "LBYARCH", "STADVDB", "GAMEDES", "HCI2001", "GEWORLD", "MOBDEVE"]
 
         while True:
             avail = {}
