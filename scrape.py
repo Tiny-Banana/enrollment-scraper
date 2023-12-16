@@ -17,7 +17,8 @@ class UndetectedTest(BaseCase):
         if not (self.undetectable):
             self.get_new_driver(undetectable=True)
         self.driver.get("https://enroll.dlsu.edu.ph/dlsu/view_course_offerings/#relax")
-
+        
+        time.sleep(1)
         print(self.driver.page_source)
         # idnum = self.get_element("input[name='p_id_no']")
         # idnum.send_keys("12108084")
