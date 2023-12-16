@@ -1,0 +1,47 @@
+scrape.py::UndetectedTest::test_browser_is_undetected
+--------------------------------------------------------------------
+Last Page: [WARNING! Browser Not Open!]
+ Duration: 34.94s
+  Browser: Chrome 120.0.6099.110
+   Driver: chromedriver 120.0.6099.71
+Timestamp: 1702745206  (Unix Timestamp)
+     Date: Sunday, 17 December 2023
+     Time: 12:46:46 AM  (Malay Peninsula Standard Time, UTC+08:00)
+--------------------------------------------------------------------
+Traceback:
+  File "c:\Users\Jomar Delos Reyes\Desktop\enrollment-scraper\scrape.py", line 44, in test_browser_is_undetected
+    page_source = self.driver.page_source
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jomar Delos Reyes\AppData\Roaming\Python\Python312\site-packages\seleniumbase\undetected\__init__.py", line 326, in __getattribute__
+    return super().__getattribute__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jomar Delos Reyes\AppData\Roaming\Python\Python312\site-packages\selenium\webdriver\remote\webdriver.py", line 449, in page_source
+    return self.execute(Command.GET_PAGE_SOURCE)["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jomar Delos Reyes\AppData\Roaming\Python\Python312\site-packages\selenium\webdriver\remote\webdriver.py", line 348, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Jomar Delos Reyes\AppData\Roaming\Python\Python312\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+Exception: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=120.0.6099.110)
+Stacktrace:
+	GetHandleVerifier [0x00007FF717794D02+56194]
+	(No symbol) [0x00007FF7177004B2]
+	(No symbol) [0x00007FF7175A76AA]
+	(No symbol) [0x00007FF717580AFD]
+	(No symbol) [0x00007FF71761C9AB]
+	(No symbol) [0x00007FF71763201F]
+	(No symbol) [0x00007FF717615C23]
+	(No symbol) [0x00007FF7175E4A45]
+	(No symbol) [0x00007FF7175E5AD4]
+	GetHandleVerifier [0x00007FF717B0D5BB+3695675]
+	GetHandleVerifier [0x00007FF717B66197+4059159]
+	GetHandleVerifier [0x00007FF717B5DF63+4025827]
+	GetHandleVerifier [0x00007FF71782F029+687785]
+	(No symbol) [0x00007FF71770B508]
+	(No symbol) [0x00007FF717707564]
+	(No symbol) [0x00007FF7177076E9]
+	(No symbol) [0x00007FF7176F8094]
+	BaseThreadInitThunk [0x00007FFD36B0257D+29]
+	RtlUserThreadStart [0x00007FFD3824AA58+40]
