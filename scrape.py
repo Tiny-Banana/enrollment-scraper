@@ -68,6 +68,7 @@ class UndetectedTest(BaseCase):
             time.sleep(10)
 
 
+#try
 # # def email_alert(subject, body, to):
 # #     msg = EmailMessage()
 # #     msg.set_content(body)
