@@ -11,7 +11,7 @@ def send_telegram_message(message):
     print(requests.get(url).json())
 
 def scraper():
-    driver = Driver(uc=True)
+    driver = Driver(uc=True, headless=True)
     driver.get("https://enroll.dlsu.edu.ph/dlsu/view_course_offerings/")
     print("UA= ", driver.get_user_agent())
     
