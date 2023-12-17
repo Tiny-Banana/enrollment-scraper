@@ -107,7 +107,11 @@
 
 
 from seleniumbase import Driver
+from selenium.webdriver.common.keys import Keys
 
 driver = Driver(uc=True, headed=True)
 driver.get("https://enroll.dlsu.edu.ph/dlsu/view_course_offerings/")
 print("UA= ", driver.get_user_agent())
+
+driver.type("input[name='p_id_no']", "12108084")
+driver.click("input[name='p_button']")
