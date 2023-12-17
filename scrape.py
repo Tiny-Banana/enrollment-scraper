@@ -72,7 +72,7 @@ class UndetectedTest(BaseCase):
             for code in codes:
                 for d in dicts:
                     if d["cc"] == code:
-                        message += f"Code: {code}\nCourse: {d["ct"]}\nSchedule: {d["sched"]}\nProf: {d["prof"]}\n\n"
+                        message += f"Code: {code}\nCourse: {d['ct']}\nSchedule: {d['sched']}\nProf: {d['prof']}\n\n"
                         print(message)
             
             if message != "":
