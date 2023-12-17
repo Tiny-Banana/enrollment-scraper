@@ -23,6 +23,7 @@ def scraper():
             driver.send_keys("input[name='p_button']", Keys.RETURN)
             bypassed = True
         except Exception:
+            print("Failed")
             driver.delete_all_cookies()
             driver.get("https://enroll.dlsu.edu.ph/dlsu/view_course_offerings/")
 
