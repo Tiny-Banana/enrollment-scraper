@@ -11,12 +11,20 @@ def send_telegram_message(message):
     print(requests.get(url).json())
 
 def scraper():
-    driver = Driver(uc=True, headless=True)
+    driver = Driver(uc=True)
     driver.get("https://enroll.dlsu.edu.ph/dlsu/view_course_offerings/")
     print("UA= ", driver.get_user_agent())
-
-    driver.send_keys("input[name='p_id_no']", "12108084")
-    driver.send_keys("input[name='p_button']", Keys.RETURN)
+    
+    bypassed = False
+    
+    while not bypassed:
+        try:
+            driver.send_keys("input[name='p_id_no']", "12108084")
+            driver.send_keys("input[name='p_button']", Keys.RETURN)
+            bypassed = True
+        except Exception:
+            driver.delete_all_cookies()
+            driver.get("https://enroll.dlsu.edu.ph/dlsu/view_course_offerings/")
 
     courses = ["STSWENG", "3DMODEL", "CSARCH2", "LBYARCH", "STADVDB", "GAMEDES", "HCI2001", "GEWORLD", "MOBDEVE"]
     preferred = [5789, 6212, 6213, 4307, 4306]
@@ -66,4 +74,5 @@ def scraper():
 
         time.sleep(10)
 
-scraper()
+if __name__ == "__main__":
+    scraper()
