@@ -88,14 +88,20 @@ class UndetectedTest(BaseCase):
 
     def test_browser_is_undetected(self):
         if not (self.undetectable):
-            self.get_new_driver(undetectable=True, headless=True)
-        self.driver.get("https://nowsecure.nl/#relax")
+            self.get_new_driver(undetectable=True)
+        self.driver.get("https://enroll.dlsu.edu.ph/dlsu/view_course_offerings/#relax")
+        idnum = self.get_element("input[name='p_id_no']")
+        if idnum:
+            print("present")
         try:
             self.verify_success()
         except Exception:
             self.clear_all_cookies()
-            self.get_new_driver(undetectable=True, headless=True)
-            self.driver.get("https://nowsecure.nl/#relax")
+            self.get_new_driver(undetectable=True)
+            self.driver.get("https://enroll.dlsu.edu.ph/dlsu/view_course_offerings/#relax")
+            idnum = self.get_element("input[name='p_id_no']")
+            if idnum:
+                print("present")
             try:
                 self.verify_success()
             except Exception:
