@@ -5,8 +5,8 @@ import time
 import requests
 
 def send_telegram_message(message):
-    TOKEN = "6682136449:AAEsM_l7Nc2jiOnNV0R1TeyOGOaVKD5ouIU"
-    chat_id = "1217724954"
+    TOKEN = ""
+    chat_id = ""
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={message}"
     print(requests.get(url).json())
 
@@ -20,7 +20,7 @@ def scraper():
         
         while not bypassed:
             try:
-                driver.send_keys("input[name='p_id_no']", "12108084")
+                driver.send_keys("input[name='p_id_no']", "<ID NUMBER>")
                 driver.send_keys("input[name='p_button']", Keys.RETURN)
                 bypassed = True
             except Exception:
